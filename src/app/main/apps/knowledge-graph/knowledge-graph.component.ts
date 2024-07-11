@@ -76,7 +76,7 @@ export class KnowledgeGraphComponent {
   }
   private setGraphDimension() {
     const divElement = this.graphContiner.nativeElement;
-    this.graphConfig = { width: divElement.offsetWidth - 8, height: divElement.offsetHeight - 8 }
+    this.graphConfig = { width: divElement.offsetWidth - 0, height: divElement.offsetHeight - 0 }
     this.initGrpah()
   }
   private async initGrpah(): Promise<void> {
