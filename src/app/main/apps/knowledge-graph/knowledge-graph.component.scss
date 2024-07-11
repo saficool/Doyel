@@ -1,0 +1,24 @@
+.card#action-card {
+  height: calc(100vh - 10px);
+}
+textarea {
+  resize: none;
+}
+
+#graphContiner {
+  height: calc(100vh - 10px);
+}
+
+#graphContiner {
+  position: relative;
+}
+
+.graph-action-item {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  display: flex;
+  gap: 5px;
+}

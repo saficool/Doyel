@@ -1,6 +1,20 @@
+// Variable overrides first
+$enable-shadows: true;
+
+// Then import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+@import "../node_modules/ngx-toastr/toastr";
+
 html,
 body {
   margin: 0;
   padding: 0;
   background-color: whitesmoke;
+}
+
+.main {
+  height: calc(100vh);
+  padding: 5px;
+  overflow: auto;
 }
