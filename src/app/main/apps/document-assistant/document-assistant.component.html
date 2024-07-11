@@ -1,0 +1,36 @@
+<div class="main">
+    <div #chatContainer class="rounded-2 border border-secondary-subtle mb-1" id="chatContiner">
+
+    </div>
+    <div class="card">
+        <div class="card-header d-flex align-items-center gap-1 p-1">
+            <button class="btn btn-sm btn-primary"><i class="bi bi-send me-2"></i>Send
+            </button>
+            <button class="btn btn-sm btn-warning">
+                <i class="bi bi-x-lg me-2"></i>Clear
+            </button>
+            @if (loading) {
+            <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            }
+            <div class="flex-grow-1"></div>
+            <div>
+                <div class="input-group input-group-sm">
+                    <input [type]="'text'" class="form-control shadow-none" placeholder="OpenAI Key"
+                        aria-label="OpenAi APi key" aria-describedby="openai_key">
+                    <span class="input-group-text" type="button" id="openai_key">
+                        <i class="bi bi-eye-slash"></i>
+                    </span>
+                </div>
+            </div>
+            <button class="btn btn-sm btn-success text-nowrap">
+                <i class="bi bi-floppy-fill me-2"></i>Save
+            </button>
+        </div>
+        <div class="card-body p-1">
+            <textarea #inputText class="form-control shadow-none" rows="3" [placeholder]="'Your texts here!'"
+                title="prompt"></textarea>
+        </div>
+    </div>
+</div>
