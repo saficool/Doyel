@@ -1,5 +1,4 @@
-using Doyel.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
+using Doyel.Infrastructure.Extensions;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -42,7 +40,9 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 // Add DbContext
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.ConfigureDatabaseConnection(builder.Configuration);
+builder.Services.ConfigureIdentity();
+builder.Services.ConfigureJwtAuthentication(builder.Configuration);
 
 var app = builder.Build();
 
